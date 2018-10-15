@@ -1,0 +1,7 @@
+{
+  "name": "Smart-Ionic",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
