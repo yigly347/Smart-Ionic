@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Lot
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	
+	<ion-item>
+  <ion-label stacked>Name</ion-label>
+  <ion-input [(ngModel)]="lot.name"></ion-input>
+ </ion-item>
+<ion-item>
+  <ion-label stacked>Ubicación</ion-label>
+  <ion-input [(ngModel)]="lot.smj_location"></ion-input>
+ </ion-item>
+<ion-item>
+  <ion-label stacked>Area</ion-label>
+  <ion-input [(ngModel)]="lot.smj_area"></ion-input>
+ </ion-item>
+<ion-item>
+  <ion-label stacked>Formación</ion-label>
+  <ion-input [(ngModel)]="lot.smj_formation"></ion-input>
+ </ion-item>
+<ion-item>
+  <ion-label stacked>Acceso a Servicios Publicos</ion-label>
+  <ion-checkbox [(ngModel)]="lot.smj_p_services"></ion-checkbox>
+ </ion-item>
+<ion-item>
+  <ion-label stacked>Altura Inicial</ion-label>
+  <ion-input [(ngModel)]="lot.smj_initial_height"></ion-input>
+ </ion-item>
+<ion-item>
+  <ion-label stacked>Altura Final</ion-label>
+  <ion-input [(ngModel)]="lot.smj_final_height"></ion-input>
+ </ion-item>
+<ion-item>
+  <ion-label stacked>Temperatura</ion-label>
+  <ion-input [(ngModel)]="lot.smj_temp"></ion-input>
+ </ion-item>
+<ion-item>
+  <ion-label stacked>Presón Atmosférica</ion-label>
+  <ion-input [(ngModel)]="lot.smj_pressure"></ion-input>
+ </ion-item>
+<ion-item>
+  <ion-label stacked>Humedad</ion-label>
+  <ion-input [(ngModel)]="lot.smj_humidity"></ion-input>
+ </ion-item>
+<ion-item>
+  <ion-label stacked>Velocidad del viento</ion-label>
+  <ion-input [(ngModel)]="lot.smj_wind_speed"></ion-input>
+ </ion-item>
+<ion-item>
+  <ion-label stacked>Dirección del viento</ion-label>
+  <ion-input [(ngModel)]="lot.smj_wind_direction"></ion-input>
+ </ion-item>
+<ion-item>
+  <ion-label stacked>Altitud</ion-label>
+  <ion-input [(ngModel)]="lot.smj_altitude"></ion-input>
+ </ion-item>
+
+
+	<button ion-button full (click)= "addLot()">Add lot</button>
+
+	<!-- <ion-list>
+		<ion-item *ngFor="let lt of lots">
+			<h1>{{lt.name}}</h1>
+			<p>{{lt.ad_org_id}}</p>
+		</ion-item> 
+	</ion-list> -->
+</ion-content>

@@ -6,10 +6,19 @@ import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
+import { MenuPage } from '../pages/menu/menu';
+import { LotPage } from '../pages/SmartAgro/lotAgro/lot';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { DatabaseProvider } from '../providers/database/database';
+
+import { IonicStorageModule } from '@ionic/storage';
+import { HttpModule } from '@angular/http';
+
+import { SQLitePorter } from '@ionic-native/sqlite-porter';
+import { SQLite } from '@ionic-native/sqlite';
 
 @NgModule({
   declarations: [
@@ -17,10 +26,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    LotPage,
+    TabsPage,
+    MenuPage
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    IonicStorageModule.forRoot(),
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -29,12 +42,17 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    LotPage,
+    TabsPage,
+    MenuPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    DatabaseProvider,
+    SQLite,
+    SQLitePorter
   ]
 })
 export class AppModule {}
