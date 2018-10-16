@@ -8,7 +8,7 @@
 
 <ion-content padding>
 	
-	<ion-item>
+<ion-item>
   <ion-label stacked>Name</ion-label>
   <ion-input [(ngModel)]="lot.name"></ion-input>
  </ion-item>
@@ -30,27 +30,27 @@
  </ion-item>
 <ion-item>
   <ion-label stacked>Altura Inicial</ion-label>
-  <ion-input [(ngModel)]="lot.smj_initial_height"></ion-input>
+  <ion-input [(ngModel)]="lot.smj_initial_height" type="number"></ion-input>
  </ion-item>
 <ion-item>
   <ion-label stacked>Altura Final</ion-label>
-  <ion-input [(ngModel)]="lot.smj_final_height"></ion-input>
+  <ion-input [(ngModel)]="lot.smj_final_height" type="number"></ion-input>
  </ion-item>
 <ion-item>
   <ion-label stacked>Temperatura</ion-label>
-  <ion-input [(ngModel)]="lot.smj_temp"></ion-input>
+  <ion-input [(ngModel)]="lot.smj_temp" type="number"></ion-input>
  </ion-item>
 <ion-item>
   <ion-label stacked>Presón Atmosférica</ion-label>
-  <ion-input [(ngModel)]="lot.smj_pressure"></ion-input>
+  <ion-input [(ngModel)]="lot.smj_pressure" type="number"></ion-input>
  </ion-item>
 <ion-item>
   <ion-label stacked>Humedad</ion-label>
-  <ion-input [(ngModel)]="lot.smj_humidity"></ion-input>
+  <ion-input [(ngModel)]="lot.smj_humidity" type="number"></ion-input>
  </ion-item>
 <ion-item>
   <ion-label stacked>Velocidad del viento</ion-label>
-  <ion-input [(ngModel)]="lot.smj_wind_speed"></ion-input>
+  <ion-input [(ngModel)]="lot.smj_wind_speed" type="number"></ion-input>
  </ion-item>
 <ion-item>
   <ion-label stacked>Dirección del viento</ion-label>
@@ -58,12 +58,24 @@
  </ion-item>
 <ion-item>
   <ion-label stacked>Altitud</ion-label>
-  <ion-input [(ngModel)]="lot.smj_altitude"></ion-input>
+  <ion-input [(ngModel)]="lot.smj_altitude" type="number"></ion-input>
+ </ion-item>
+<ion-item>
+  <ion-label stacked>Longitud</ion-label>
+  <ion-input [(ngModel)]="lot.smj_longitude" type="number"></ion-input>
+ </ion-item>
+<ion-item>
+  <ion-label stacked>Latitud</ion-label>
+  <ion-input [(ngModel)]="lot.smj_latitude" type="number"></ion-input>
  </ion-item>
 
 
-	<button ion-button full (click)= "addLot()">Add lot</button>
 
+<ion-item>
+	<button ion-button  (click)= "newLot()">new</button>
+	<button ion-button  (click)= "addLot()">save</button>
+	<button ion-button  (click)= "deleteLot()">delete</button>
+</ion-item>
 	<!-- <ion-list>
 		<ion-item *ngFor="let lt of lots">
 			<h1>{{lt.name}}</h1>

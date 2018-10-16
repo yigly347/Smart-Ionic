@@ -32,5 +32,13 @@ export class LotPage {
   	this.lot={};
   }
 
+  newLot(){
+    
+  }
+
+  deleteLot(){
+
+  }
+
   
 }
