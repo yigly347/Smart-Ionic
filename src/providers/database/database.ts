@@ -7,34 +7,29 @@ import { BehaviorSubject } from 'rxjs/Rx';
 import { Storage } from '@ionic/storage';
 import 'rxjs/add/operator/map';
 
-/*
-  Generated class for the DatabaseProvider provider.
 
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class DatabaseProvider {
 	database:SQLiteObject;
 	private databaseReady: BehaviorSubject<boolean>;
   constructor(public http: Http, private sqlitePorter:SQLitePorter, private storage: Storage,private sqlite: SQLite, private platform:Platform) {
-    // this.databaseReady = new BehaviorSubject(false);
-    // this.platform.ready().then(() => {
-    // 	this.sqlite.create({
-    // 		name: 'smarterp.db',
-    // 		location: 'default'
-    // 	})
-    // 	.then((db:SQLiteObject) =>{
-    // 		this.database =db;
-    // 		this.storage.get('database_filled').then(val => {
-    // 			if(val){
-    // 				this.databaseReady.next(true);
-    // 			}else{
-    // 				this.fillDatabase();
-    // 			}
-    // 		})
-    // 	});
-    // });
+    this.databaseReady = new BehaviorSubject(false);
+    this.platform.ready().then(() => {
+    	this.sqlite.create({
+    		name: 'smarterp.db',
+    		location: 'default'
+    	})
+    	.then((db:SQLiteObject) =>{
+    		this.database =db;
+    		this.storage.get('database_filled').then(val => {
+    			if(val){
+    				this.databaseReady.next(true);
+    			}else{
+    				this.fillDatabase();
+    			}
+    		})
+    	});
+    });
   }
 
   fillDatabase(){

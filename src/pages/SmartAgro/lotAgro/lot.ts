@@ -11,11 +11,11 @@ export class LotPage {
 	lots = [];
 	lot = {};
   constructor(public navCtrl: NavController, private databaseProvider: DatabaseProvider) {
-  	// this.databaseProvider.getDatabaseState().subscribe(rdy => {
-  	// 	if(rdy){
-  	// 		this.loadLotData();
-  	// 	}
-  	// })
+  	this.databaseProvider.getDatabaseState().subscribe(rdy => {
+  		if(rdy){
+  			this.loadLotData();
+  		} 
+  	})
   }
 
   loadLotData(){
